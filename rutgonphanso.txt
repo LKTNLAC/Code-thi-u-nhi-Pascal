@@ -1,0 +1,11 @@
+   p:=a*d+b*c;
+   q:=b*d;
+   x:=p;y:=q;
+   while y<>0 do
+   begin
+      r:=x mod y;
+      x:=y;
+      y:=r;
+   end;
+   p:=p div x;
+   q:=q div x;

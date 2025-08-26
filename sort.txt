@@ -1,0 +1,34 @@
+procedure swap(var a:longarr; i,j:longint);
+var c:longint;
+begin
+   c:=a[i];
+   a[i]:=a[j];
+   a[j]:=c;
+end;
+procedure sort(l,r:longint);
+var i,j,x:longint;
+begin
+  i:=l; j:=r;
+  x:= b[l + random(r-l+1)];
+  while(i<j) do
+  begin
+     while (b[i] < x) do inc(i);
+     while (b[j] > x) do dec(j);
+     if (i<=j) then
+     begin
+        swap(a, i, j);
+        swap(b, i, j);
+        inc(i); dec(j);
+     end;
+  end;
+  if (i < r) then sort(i, r);
+  if (l < j) then sort(l, j);
+end;
+procedure solve;
+var i: longint;
+begin
+   sort(1, n);
+   coins :=m;
+   for i:=1 to n do
+      if (coins >= b[i]) then coins:= coins+a[i];
+end;

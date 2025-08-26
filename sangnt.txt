@@ -1,0 +1,11 @@
+procedure TaosangNT;
+var i,j:longint;
+begin
+   fillchar(a,sizeof(a),true);
+   a[1]:=false;
+   for i:=2 to 10000000 do
+      if ( a[i] = true ) then
+      begin
+         for j:=i to 10000000 div i do a[i*j]:=false;
+      end;
+end;
