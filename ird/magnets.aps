@@ -1,0 +1,17 @@
+program magnets;
+var
+procedure input;
+var f:text;
+begin
+   assign(f,'magnets.inp');
+   reset(f);
+   readln(f,n);
+   close(f);
+end;
+procedure output;
+var g:text;
+begin
+   assign(g,'magnets.out');
+   rewrite(g);
+
+end;
