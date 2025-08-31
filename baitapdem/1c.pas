@@ -1,0 +1,14 @@
+program b1c;
+var n,i:integer;
+s:real;
+begin
+   readln(n);
+   s:=0;
+   i:=1;
+   while(i<=n) do
+   begin
+      s:=sqrt(2+s);
+      i:=i+1;
+   end;
+   writeln(s:0:2);
+end.
