@@ -1,0 +1,38 @@
+program park;
+const
+   fi ='park.inp';
+   fo='park.out';
+var count:array[2010..9999] of longint;
+procedure getdata;
+var f:text;
+    k,i,id:longint;
+begin
+   fillchar(count, sizeof(count), 0);
+   assign(f,fi); reset(f);
+   readln(f,k);
+   for i:=1 to k do
+   begin
+      readln(f,id);
+      inc(count[id mod 10000]);
+   end;
+   close(f);
+end;
+procedure solve;
+var c,i: longint;
+    f:text;
+begin
+   c:=0;
+   for i:=2010 to 9999 do
+      if (count[i] > 0) then
+         if (count[i] <=5) then c:=c+100
+         else c:=c+100+ count[i] - 5;
+   assign(f,fo);
+   rewrite(f);
+   write(f,c);
+   close(f);
+end;
+begin
+   getdata;
+   solve;
+end.
+end;

@@ -1,0 +1,27 @@
+program ones;
+const fin='ones.inp';
+        fout='ones.out';
+var a:array[1..1000] of longint;
+    n,i,j:longint;
+    f,g:text;
+begin
+        assign(f,fin);reset(f);
+        assign(g,fout);rewrite(g);
+        readln(f,n);
+        for i:=1 to n-1 do
+        begin
+                a[i]:=i;
+                a[i+n]:=n-i;
+        end;
+        a[n]:=n;
+        for i:=n*2-1 downto 1 do
+        if a[i]>9 then
+                begin
+                        a[i-1]:=a[i-1]+(a[i] div 10);
+                        a[i]:=a[i] mod 10;
+                end;
+        for i:=1 to n*2-1 do
+                write(g,a[i]);
+        close(f);
+        close(g);
+end.
